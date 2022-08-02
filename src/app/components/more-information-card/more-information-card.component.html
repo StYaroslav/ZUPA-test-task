@@ -1,0 +1,17 @@
+<div class="more-information" [ngClass]="{ dark: siteTheme.isDarkMode }">
+  <div class="more-information__container">
+    <span class="more-information__title"> More info </span>
+    <div class="more-information__list">
+      <a
+        *ngFor="let item of listItems"
+        href="#"
+        class="more-information__list--item"
+        >{{ item }}</a
+      >
+    </div>
+  </div>
+
+  <div class="more-information__content">
+    <ng-content></ng-content>
+  </div>
+</div>

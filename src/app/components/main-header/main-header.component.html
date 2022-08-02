@@ -1,0 +1,55 @@
+<div class="default-wrapper">
+  <div
+    [class.active]="isMenuOpened"
+    class="header"
+    [ngClass]="{ dark: siteTheme.isDarkMode }"
+  >
+    <div routerLink="/" class="header__logo">
+      <span class="header__logo--text">ZUPA</span>
+    </div>
+    <div
+      [class.active]="isMenuOpened"
+      (click)="toggleMenu()"
+      class="header__burger"
+    >
+      <span></span>
+    </div>
+    <nav
+      [class.active]="isMenuOpened"
+      (click)="toggleMenu()"
+      class="header__menu"
+    >
+      <ul class="header__list">
+        <li>
+          <a href="#" class="header__link">Services</a>
+        </li>
+        <li>
+          <a href="#" class="header__link">Contact</a>
+        </li>
+        <ng-container *ngIf="!isDesktop">
+          <li>
+            <a href="#" class="header__link">Facebook</a>
+          </li>
+          <li>
+            <a href="#" class="header__link">Instagram</a>
+          </li>
+          <li>
+            <a href="#" class="header__link">Linkedin</a>
+          </li>
+        </ng-container>
+      </ul>
+    </nav>
+
+    <ul *ngIf="isDesktop" class="header__list vertical">
+      <li>
+        <a href="#" class="header__link">Facebook</a>
+      </li>
+      <li>
+        <a href="#" class="header__link">Instagram</a>
+      </li>
+      <li>
+        <a href="#" class="header__link">Linkedin</a>
+      </li>
+    </ul>
+  </div>
+</div>

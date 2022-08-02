@@ -1,3 +1,5 @@
 body {
-  font-family: $font-family;
+  font-family: $font-primary;
+  font-size: rem($base-font-size);
+  font-weight: normal;
 }

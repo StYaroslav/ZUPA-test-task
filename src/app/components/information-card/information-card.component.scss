@@ -1,0 +1,22 @@
+@import "src/styles";
+
+.information-card {
+  @extend %case-item-container;
+
+  &__subtitle,
+  &__title {
+    color: white;
+  }
+
+  &__title {
+    @extend %h3-title;
+  }
+
+  @media screen and (min-width: $desktop-breakpoint) {
+    min-height: $information-card-min-height;
+
+    &__wrapper {
+      max-width: $information-card-max-width-desktop;
+    }
+  }
+}

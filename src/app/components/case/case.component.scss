@@ -1,0 +1,252 @@
+@import "src/styles";
+
+.heading {
+  &__title {
+    @extend %h1-title;
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    font-size: rem(32);
+  }
+
+  @media screen and (min-width: $desktop-breakpoint) {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    &__subtitle {
+      align-self: center;
+      display: inline-block;
+      max-width: $case-text-width;
+    }
+  }
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  &__subtitle {
+    @extend %small-text;
+  }
+
+  &__title {
+    @extend %h3-title;
+  }
+}
+
+.overview {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  padding: $gutter-mobile;
+
+  &:before {
+    filter: brightness(50%);
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translate3d(0, 0, 0);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.2s ease-in;
+    z-index: 1;
+    background-image: url("/assets/images/case-background.jpg");
+  }
+
+  &__image,
+  &__main-info,
+  &__text {
+    z-index: 2;
+    position: relative;
+  }
+
+  &__image {
+    margin-bottom: 40px;
+  }
+
+  &__main-info {
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    margin: 0 auto 60px auto;
+  }
+
+  &__main-info {
+    @extend %h3-title;
+  }
+
+  &__overflow-image {
+    z-index: 2;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  @media screen and (min-width: $desktop-breakpoint) {
+    padding: 150px 15px 250px 15px;
+
+    &__image {
+      margin-bottom: 150px;
+    }
+
+    &__main-info {
+      margin-bottom: 80px;
+    }
+
+    &__text {
+      position: relative;
+      max-width: $case-text-width;
+      margin: 0 auto 120px auto;
+      font-size: rem(32);
+    }
+  }
+}
+
+.single-image {
+  margin-top: -50px;
+  padding: 0;
+
+  @media screen and (min-width: $desktop-breakpoint) {
+    margin-top: -250px;
+  }
+}
+
+.case-text {
+  max-width: $case-text-width;
+  margin: 0 auto;
+  font-size: rem(32);
+
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  @media screen and (min-width: $desktop-breakpoint) {
+    &:not(:last-child) {
+      margin-bottom: 80px;
+    }
+  }
+}
+
+.case-pictures {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &--image {
+      margin-bottom: 5px;
+    }
+
+    &--text {
+      @extend %small-text;
+    }
+  }
+
+  @media screen and (min-width: $desktop-breakpoint) {
+    &__item--image {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.bottom-image {
+  &__container {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  @media screen and (min-width: $desktop-breakpoint) {
+    padding-bottom: 0;
+
+    &__container {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
+
+.statistics {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding-bottom: unset;
+
+  &__item {
+    padding: 20px 40px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid rgba(255, 255, 255, $borders-opacity);
+    border-width: 1px 0 0 0;
+
+    &--title {
+      @extend %small-text;
+    }
+
+    &--entity {
+      @extend %h3-title;
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+    }
+
+    &--entity.reversed {
+      flex-direction: row-reverse;
+    }
+
+    .text {
+      white-space: nowrap;
+    }
+
+    .value {
+      @extend %h1-title;
+    }
+  }
+
+  @media screen and (min-width: $desktop-breakpoint) {
+    flex-direction: row;
+
+    &__item {
+      flex: 1;
+      padding: 30px;
+      border-width: 1px 1px 0 0;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    &__item--entity {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+    }
+
+    &__item--text {
+      flex: 1;
+    }
+
+    &__item:last-child {
+      border-bottom-width: 0;
+    }
+  }
+}
+
+.last-block {
+  padding: 0;
+}

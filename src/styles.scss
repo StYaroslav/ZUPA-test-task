@@ -1,2 +1,88 @@
 /* You can add global styles to this file, and also import other style files */
 @import "sass/main.scss";
+
+html,
+body {
+  background-color: $site-background-color;
+}
+
+body.dark {
+  color: white;
+}
+
+body.lock {
+  overflow: hidden;
+}
+
+.section {
+  padding: $mobile-blocks-padding 0;
+
+  @media screen and (min-width: $desktop-breakpoint) {
+    padding: $desktop-blocks-padding 0;
+  }
+}
+
+.default-wrapper {
+  @extend %main-container;
+}
+
+.main-content-wrapper {
+  @extend %main-content-wrapper;
+}
+
+.cases,
+.cases__row {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cases {
+  @media screen and (min-width: $desktop-breakpoint) {
+    &__container:not(:first-child) {
+      margin-top: -$cases-gutter;
+    }
+
+    &__container.extended {
+      margin-top: -$cases-gutter-extended;
+    }
+
+    &__container.extended .right-down {
+      padding-top: $cases-gutter-extended;
+    }
+
+    &__container.extended .left-up {
+      align-self: flex-start;
+    }
+
+    &__image {
+      margin-bottom: 50px;
+    }
+
+    &__row {
+      gap: unset;
+      margin-right: -10px;
+      margin-left: -10px;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+
+    &__row,
+    &__item {
+      flex: 1;
+    }
+
+    .left-up {
+      padding-bottom: $cases-gutter;
+    }
+
+    .right-down {
+      padding-top: $cases-gutter;
+    }
+  }
+}

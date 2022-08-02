@@ -1,0 +1,87 @@
+%main-container {
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 $gutter-mobile;
+
+  @media screen and (min-width: $desktop-breakpoint) {
+    padding: 0 $gutter-desktop;
+  }
+}
+
+%main-content-wrapper {
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 $gutter-mobile;
+
+  @media screen and (min-width: $desktop-breakpoint) {
+    margin: 0 auto;
+    max-width: rem($desktop-main-content-wrapper-width);
+    padding: 0 $gutter-main-content-wrapper-desktop;
+  }
+}
+
+%burger-menu-lines {
+  content: "";
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+}
+
+%h1-title {
+  font-size: rem(42);
+  line-height: 110%;
+
+  @media screen and (min-width: $desktop-breakpoint) {
+    font-size: rem(120);
+    font-weight: normal;
+    line-height: 115px;
+  }
+}
+
+%h2-title {
+  font-size: rem(36);
+  line-height: 110%;
+  font-weight: normal;
+
+  @media screen and (min-width: $desktop-breakpoint) {
+    font-size: rem(90);
+    line-height: 100%;
+  }
+}
+
+%h3-title {
+  font-size: rem(32);
+  line-height: 110%;
+  font-weight: normal;
+
+  @media screen and (min-width: $desktop-breakpoint) {
+    font-size: rem(60);
+    line-height: 100%;
+  }
+}
+
+%small-description {
+  font-size: rem(24);
+  line-height: inherit;
+}
+
+%small-text {
+  font-size: rem(18);
+}
+
+%case-item-container {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  padding: 15px;
+  min-height: $case-min-height-mobile;
+
+  @media screen and (min-width: $desktop-breakpoint) {
+    padding: 35px;
+    min-height: $case-min-height-desktop;
+  }
+}

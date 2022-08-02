@@ -1,0 +1,167 @@
+@import "src/styles";
+
+.heading {
+  &__title {
+    @extend %h1-title;
+    margin-bottom: 20px;
+  }
+
+  &__content--description {
+    @extend %small-description;
+    margin-bottom: 10px;
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+
+  @media screen and (min-width: $desktop-breakpoint) {
+    display: flex;
+    gap: 200px;
+    align-items: center;
+
+    &__content {
+      max-width: 600px;
+    }
+  }
+}
+
+.information-card {
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__main-letter,
+  &__subtitle {
+    font-weight: bold;
+  }
+
+  &__main-letter {
+    font-size: rem(300);
+  }
+
+  &__subtitle {
+    font-size: rem(42);
+  }
+
+  @media screen and (min-width: $desktop-breakpoint) {
+    &__subtitle {
+      font-size: rem(56);
+    }
+  }
+}
+
+.case-information {
+  &__title {
+    font-size: rem(30);
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    font-size: rem(18);
+  }
+
+  @media screen and (min-width: $desktop-breakpoint) {
+    &__title {
+      font-weight: normal;
+    }
+  }
+}
+
+.message {
+  text-align: center;
+
+  &__small-title {
+    margin-bottom: 10px;
+  }
+
+  &__main-title {
+    @extend %h2-title;
+  }
+}
+
+.article-information {
+  display: flex;
+  flex-direction: column;
+
+  &__small-title {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    @extend %h3-title;
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+
+    & p {
+      @extend %small-description;
+    }
+  }
+
+  &__button {
+    padding: 5px 10px 5px 5px;
+    border: 1px solid $silver;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    & svg {
+      height: 12px;
+      width: 12px;
+    }
+
+    &--image {
+      object-fit: cover;
+      height: 45px;
+      width: 45px;
+    }
+  }
+
+  @media screen and (min-width: $desktop-breakpoint) {
+    &__small-title {
+      margin-bottom: 20px;
+    }
+
+    &__title {
+      max-width: $article-title-max-width;
+      margin-bottom: 50px;
+    }
+
+    &__description {
+      margin-bottom: 35px;
+      flex-direction: row;
+      gap: 70px;
+    }
+
+    &__button {
+      padding: 10px 40px 10px 10px;
+      gap: 20px;
+    }
+
+    &__button svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    &__button--image {
+      width: 75px;
+      height: 75px;
+    }
+  }
+}
+
+.last-block {
+  padding-bottom: unset;
+}

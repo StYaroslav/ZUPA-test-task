@@ -1,0 +1,14 @@
+<div [ngStyle]="{ background: backgroundColor }" class="information-card">
+  <ng-container *ngIf="!customTemplate; else customView">
+    <div class="information-card__wrapper">
+      <span *ngIf="subtitle" class="information-card__subtitle">{{
+        subtitle
+      }}</span>
+      <h3 *ngIf="title" class="information-card__title">{{ title }}</h3>
+    </div>
+  </ng-container>
+
+  <ng-template #customView>
+    <ng-content></ng-content>
+  </ng-template>
+</div>

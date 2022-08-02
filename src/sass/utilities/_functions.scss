@@ -1,5 +1,5 @@
 @function rem($num) {
-  @return strip-unit($num) / $base-font * 1rem;
+  @return strip-unit($num) / $base-font-size * 1rem;
 }
 
 @function strip-unit($num) {

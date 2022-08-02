@@ -1,0 +1,132 @@
+@import "src/styles";
+
+$preview-card-height-desktop: 250px;
+
+.case {
+  @extend %case-item-container;
+
+  &.preview {
+    background: linear-gradient(#0058ff, #a78349);
+    padding: 0;
+    height: 100%;
+    min-height: unset;
+    flex-direction: row;
+
+    .case__container {
+      overflow: hidden;
+      position: relative;
+      width: 35%;
+    }
+
+    .case__content {
+      height: unset;
+      padding: 20px;
+      justify-content: center;
+      align-items: stretch;
+      flex: 1;
+      margin: 0;
+      gap: 0;
+      transition: 0.2s ease-in;
+    }
+
+    .case__content--subtitle {
+      @extend %small-text;
+    }
+
+    .case__content--button {
+      background-color: transparent;
+    }
+
+    .case__content--button svg path {
+      fill: white;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    transform: translate3d(0, 0, 0);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.2s ease-in;
+    z-index: 1;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: auto;
+    color: white;
+
+    &--subtitle {
+      transition: 0.2s ease-in;
+    }
+
+    &--button {
+      display: flex;
+      margin-left: auto;
+      padding: 8px 16px;
+      transition: 0.2s ease-in;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 20px;
+    }
+
+    &--button svg {
+      height: 12px;
+      width: 12px;
+    }
+  }
+
+  &__title-wrapper {
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+
+    &--title {
+      @extend %h3-title;
+      transition: 0.2s ease-in;
+    }
+  }
+
+  @media screen and (min-width: $desktop-breakpoint) {
+    &:hover {
+      .case__content--button {
+        padding: 16px 24px;
+        border-radius: 24px;
+      }
+
+      .case__title-wrapper--title,
+      .case__content--subtitle {
+        opacity: 1;
+      }
+
+      .case__image {
+        transform: scale(1.2);
+        filter: brightness(50%);
+      }
+    }
+
+    &__title-wrapper--title,
+    &__content--subtitle {
+      opacity: 0;
+    }
+
+    &__content--button {
+      border-radius: 50%;
+      padding: 16px;
+    }
+
+    &__content--button svg {
+      height: 16px;
+      width: 16px;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+@import "src/styles";
+
+.footer {
+  @extend %small-text;
+  background: white;
+  color: black;
+  padding: $mobile-blocks-padding $gutter-mobile $gutter-mobile $gutter-mobile;
+
+  &__container {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+
+  &__locations {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+  }
+
+  &__information {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media screen and (min-width: $desktop-breakpoint) {
+    padding: $gutter-footer $gutter-desktop $gutter-desktop $gutter-desktop;
+
+    &__container {
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    &__locations {
+      flex-direction: row;
+      gap: 35px;
+      justify-content: space-between;
+    }
+  }
+}
